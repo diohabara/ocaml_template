@@ -1,9 +1,7 @@
 name: Main workflow
-
 on:
   pull_request:
   push:
-
 jobs:
   build:
     strategy:
@@ -25,7 +23,6 @@ jobs:
       - run: opam install . --deps-only --with-test
       - run: opam exec -- dune build
       - run: opam exec -- dune runtest
-
   lint-doc:
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +35,6 @@ jobs:
           dune-cache: true
       - name: Lint doc
         uses: ocaml/setup-ocaml/lint-doc@v2
-
   lint-fmt:
     runs-on: ubuntu-latest
     steps:
@@ -51,7 +47,6 @@ jobs:
           dune-cache: true
       - name: Lint fmt
         uses: ocaml/setup-ocaml/lint-fmt@v2
-
   lint-opam:
     runs-on: ubuntu-latest
     steps:

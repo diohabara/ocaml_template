@@ -10,10 +10,13 @@ homepage: "https://github.com/diohabara/ocaml_template"
 doc: "https://github.com/diohabara/ocaml_template"
 bug-reports: "https://github.com/diohabara/ocaml_template/issues"
 depends: [
+  "stdio"
+  "ppx_jane"
+  "ppx_inline_test"
+  "ppx_assert"
+  "base"
   "core"
-  "core_bench"
-  "dune" {>= "3.4"}
-  "merlin"
+  "dune" {>= "2.9"}
   "ocaml"
   "ocaml-lsp-server"
   "ocamlformat"
@@ -29,9 +32,11 @@ build: [
     name
     "-j"
     jobs
+    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
+  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/diohabara/ocaml_template.git"
