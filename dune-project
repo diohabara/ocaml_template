@@ -1,4 +1,4 @@
-(lang dune 2.9)
+(lang dune 3.4)
 (name ocaml_template)
 (generate_opam_files true)
 (source (github diohabara/ocaml_template))
