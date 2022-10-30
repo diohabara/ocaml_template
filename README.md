@@ -2,7 +2,12 @@
 
 template repository for ocaml
 
-**replace every `ocaml_tempalte` with your own project name**
+**after importing**
+
+- [ ] rename `ocaml_template` in files
+- [ ] rename `lib/ocaml_template.ml` and `test/ocaml_template.ml`
+- [ ] remove `ocaml_template.opam`
+- [ ] build
 
 ## how to set up
 
@@ -10,6 +15,7 @@ template repository for ocaml
 opam switch create .
 eval $(opam env)
 opam install . --deps-only
+eval $(opam env)
 ```
 
 ## how to run
